@@ -1,0 +1,79 @@
+/* WHY */
+.why {
+  background-color: rgb(101, 26, 26);
+  color: white;
+  padding: 5rem 0;
+}
+.pros {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 7rem;
+}
+
+.pro {
+  width: 100%;
+}
+
+.pro .icon {
+  font-size: 4rem;
+  margin-top: 1rem;
+}
+
+.pro h4 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+small {
+  font-weight: 100;
+  font-size: 0.7rem;
+}
+/* End of Why */
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+@media screen and (max-width: 1024px) {
+  /* WHY */
+
+  .pros {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+  }
+
+  .pro h4 {
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pro > small {
+    font-size: 0.7rem;
+  }
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+@media screen and (max-width: 600px) {
+  /* WHY */
+  .why {
+    padding: 2rem 0 4rem 0;
+  }
+
+  .pros {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .pro .icon {
+    margin-top: 1rem;
+  }
+
+  .pro h4 {
+    margin-top: 0.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pro > small {
+    font-size: 0.6rem;
+  }
+}
