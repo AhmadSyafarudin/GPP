@@ -14,7 +14,7 @@ const Why = () => {
     <section className="why" id="why">
       <div className="container-section">
         <Fade direction="down" triggerOnce>
-          <h2 className="title">Kenapa harus di MN Property?</h2>
+          <h2 className="title">Kenapa harus di KostHunt?</h2>
         </Fade>
         <div className="pros">
           <Fade direction="right" cascade delay={500} triggerOnce>
