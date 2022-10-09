@@ -3,17 +3,17 @@ import "./Home.css";
 import Beranda from "./components/beranda/Beranda";
 import Footer from "./components/footer/Footer";
 import Kosan from './components/list/Kosan';
-import Contact from "./components/contact/Contact";
 
-function Home() {
+
+
+const Home = () => {
   return (
     <>
       <Beranda />
-      <Kosan />
-      <Contact />
+      <Kosan/>
       <Footer />
     </>
   );
-}
+};
 
 export default Home;
