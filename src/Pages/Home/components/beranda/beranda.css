@@ -1,0 +1,86 @@
+/* Beranda */
+
+.beranda {
+    background-image: url("../../assets/header.jpg");
+    background-size: cover;
+    padding: 7rem 0;
+}
+
+.beranda h2 {
+    font-size: 3.5rem;
+    color: blue;
+    font-weight: lighter;
+    margin-bottom: 5rem;
+}
+
+.location-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5rem;
+}
+
+.location {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 20rem;
+    border-radius: 1rem;
+    color: white;
+    border: 2px solid rgb(255, 255, 255, 0.7);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.location>h5 {
+    padding-top: 2rem;
+}
+
+
+/* End of Beranda */
+
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+
+@media screen and (max-width: 1024px) {
+    /* BERANDA */
+    .beranda {
+        padding: 4rem 0 5rem 0;
+    }
+    .location-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+    }
+    .location {
+        height: 15rem;
+    }
+    .beranda>h2 {
+        font-size: 3rem;
+        color: white;
+        font-weight: lighter;
+        margin-bottom: 3rem;
+    }
+}
+
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+
+@media screen and (max-width: 600px) {
+    /* BERANDA */
+    .beranda {
+        background-size: cover;
+        padding: 4rem 0 5rem 0;
+    }
+    .location-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .location {
+        height: 6rem;
+    }
+    .beranda>h2 {
+        font-size: 3rem;
+        color: white;
+        font-weight: lighter;
+        margin-bottom: 3rem;
+    }
+}
