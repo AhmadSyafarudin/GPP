@@ -5,7 +5,6 @@ import Footer from "./components/footer/Footer";
 import Kosan from './components/list/Kosan';
 
 
-
 const Home = () => {
   return (
     <>

@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 const KosanList = () => {
   const [kosan, setKosan] = useState([{id:1, 
                                        nama:"kosan melati",
-                                      alamat:"Airan Raya",
-                                    luas:"3x4",
-                                    harga:"RP. 3.000.000",
-                                  fasilitas:["toilet ", "kasur ", "lemari"]}]);
+                                       alamat:"Airan Raya",
+                                       luas:"3x4",
+                                       harga:"RP. 3.000.000",
+                                       fasilitas:["toilet ", "kasur ", "lemari"]}]);
 
   return (
     <div>
