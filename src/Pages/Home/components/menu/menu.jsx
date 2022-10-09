@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar, Container, Nav, NavLink, NavbarBrand } from "react-bootstrap";
 
-import "./nav.css";
+import "./menu.css";
 
-const BsNav = () => {
+const Menu = () => {
   return (
     <Navbar className="nav-color" variant="dark" sticky="top" collapseOnSelect expand="lg">
       <Container>
@@ -12,8 +12,8 @@ const BsNav = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav activeKey="/home" className="justify-content-end">
             <NavLink href="#hero">News</NavLink>
-            <NavLink href="#produk">Produk</NavLink>
-            <NavLink href="#why">Keunggulan</NavLink>
+            <NavLink href="#produk">Kosan</NavLink>
+            <NavLink href="#why">Promo</NavLink>
             <NavLink href="#contact">Kontak</NavLink>
           </Nav>
         </Navbar.Collapse>
@@ -22,4 +22,4 @@ const BsNav = () => {
   );
 };
 
-export default BsNav;
+export default Menu;

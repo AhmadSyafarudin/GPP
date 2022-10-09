@@ -5,11 +5,14 @@ import Footer from "./components/footer/Footer";
 import Kosan from './components/list/Kosan';
 import Contact from "./components/contact/Contact";
 import Reason from './components/reason/reason';
-import Hero from './components/hero/Hero';
+import News from './components/news/news';
+import Menu from './components/menu/menu';
 
 const Home = () => {
   return (
     <>
+      <Menu />
+      <News />
       <Beranda />
       <Kosan />
       <Reason />

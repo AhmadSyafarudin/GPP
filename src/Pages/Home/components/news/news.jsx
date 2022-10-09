@@ -1,5 +1,5 @@
 import React from "react";
-import "./hero.css";
+import "./news.css";
 
 //Swiper Core
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,7 +15,7 @@ import IMG1 from "../../assets/image 2.png";
 import IMG3 from "../../assets/image 3.png";
 import IMG2 from "../../assets/image 4.png";
 
-const Hero = () => {
+const News = () => {
   return (
     <section className="hero" id="hero">
       <h3>Recent News</h3>
@@ -58,4 +58,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default News;
