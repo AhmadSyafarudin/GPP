@@ -11,7 +11,7 @@ import { Fade } from "react-awesome-reveal";
 
 const Reason = () => {
   return (
-    <section className="why" id="why">
+    <section className="reason" id="reason">
       <div className="container-section">
         <Fade direction="down" triggerOnce>
           <h2 className="title">Kenapa harus di KostHunt?</h2>
