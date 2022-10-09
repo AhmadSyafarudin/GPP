@@ -1,0 +1,37 @@
+/* Navigation */
+.nav-color {
+  background-color: #1A35C1;
+  width: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23) !important;
+}
+
+.navbar-brand {
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.navbar-nav a {
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.navbar-collapse {
+  flex-grow: 0;
+}
+/* End of Navigation */
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+@media screen and (max-width: 1024px) {
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+@media screen and (max-width: 600px) {
+  .navbar-toggler {
+    width: 25%;
+  }
+
+  .navbar-toggler-icon {
+    width: 1.4em;
+    height: 1.4rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import "./why.css";
+import "./reason.css";
 
 //React Icon
 import { IoIosHome } from "react-icons/io";
@@ -9,7 +9,7 @@ import { AiOutlineSafetyCertificate } from "react-icons/ai";
 //Animation
 import { Fade } from "react-awesome-reveal";
 
-const Why = () => {
+const Reason = () => {
   return (
     <section className="why" id="why">
       <div className="container-section">
@@ -42,4 +42,4 @@ const Why = () => {
   );
 };
 
-export default Why;
+export default Reason;

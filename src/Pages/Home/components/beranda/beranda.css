@@ -1,16 +1,17 @@
 /* Beranda */
 
 .beranda {
-    background-image: url("../../assets/header.jpg");
+    background-image: url("../../assets/header.png");
     background-size: cover;
     padding: 7rem 0;
 }
 
 .beranda h2 {
     font-size: 3.5rem;
-    color: blue;
+    color: orange;
     font-weight: lighter;
     margin-bottom: 5rem;
+    text-align: center;
 }
 
 .location-wrap {

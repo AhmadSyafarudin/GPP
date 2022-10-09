@@ -3,6 +3,10 @@
   padding: 5rem 0;
 }
 
+.title {
+  text-align: center;
+}
+
 .house-wrap {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

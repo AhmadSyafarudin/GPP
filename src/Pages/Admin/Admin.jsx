@@ -9,7 +9,7 @@ const Admin = () => {
     <>
      <div className="nav_admin">
         <div className="nav_wrap">
-          <h5>Dashboard Admin</h5>
+          <h2>Dashboard Admin</h2>
           <ul>
             <li>
               <Link className="admin_link" to="/admin/add">

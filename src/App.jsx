@@ -10,6 +10,7 @@ import { AuthProvider } from "./context/AuthContext";
 import KosanList from './Pages/Admin/components/KosanList';
 import KosanAdd from './Pages/Admin/components/KosanAdd';
 import KosanEdit from './Pages/Admin/components/KosanEdit';
+import KosanView from './Pages/View/KosanView';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/kosan" element={<KosanView />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/add" element={<KosanAdd />} />
           <Route path="/admin/edit" element={<KosanEdit />} />

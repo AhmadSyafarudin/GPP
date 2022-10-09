@@ -13,7 +13,13 @@ const KosanList = () => {
                                         alamat:"jl. Raden Saleh",
                                         luas:"3x4",
                                         harga:"RP. 5.000.000",
-                                        fasilitas:["toilet dalam, ", "kasur, ", "lemari, ", "meja belajar, ", "kipas angin"]}]);
+                                        fasilitas:["toilet dalam, ", "kasur, ", "lemari, ", "meja belajar, ", "kipas angin"]},
+                                        {no:3, 
+                                          nama:"kosan raymond",
+                                          alamat:"jl. Terusan Ryacudu",
+                                          luas:"4x4",
+                                          harga:"RP. 4.500.000",
+                                          fasilitas:["toilet dalam, ", "kasur, ", "lemari, ", "meja"]}]);
 
 
   
