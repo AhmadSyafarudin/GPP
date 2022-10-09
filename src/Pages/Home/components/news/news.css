@@ -5,6 +5,11 @@
     background-color: #1A35C1;
     padding: 2rem;
     border-bottom: 1px solid white;
+    text-align: center;
+}
+
+.news{
+    text-align: center;
 }
 
 .hero .container-section {
