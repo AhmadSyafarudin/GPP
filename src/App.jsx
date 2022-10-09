@@ -7,7 +7,6 @@ import Admin from "./Pages/Admin/Admin";
 import Login from "./Pages/Admin/components/auth/Login";
 import Sign from "./Pages/Admin/components/auth/Sign";
 import { AuthProvider } from "./context/AuthContext";
-import KosanList from './Pages/Admin/components/KosanList';
 import KosanAdd from './Pages/Admin/components/KosanAdd';
 import KosanEdit from './Pages/Admin/components/KosanEdit';
 import KosanView from './Pages/View/KosanView';
