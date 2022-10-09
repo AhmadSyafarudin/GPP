@@ -35,22 +35,25 @@ const News = () => {
       >
         <SwiperSlide className="news-wrap">
           <div className="news">
-            <h5>Topic 1</h5>
+            <h5>Kosan Melati</h5>
             <img src={IMG1} alt="" className="swiper-img" />
+            <p>Duis id eu duis nulla aute Lorem ut ullamco pariatur ut.</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className="news-wrap">
           <div className="news">
-            <h5>Topic 2</h5>
+            <h5>Kosan Jaya</h5>
             <img src={IMG2} alt="" className="swiper-img" />
+            <p>Et magna minim amet nostrud elit.</p>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className="news-wrap">
           <div className="news">
-            <h5>Topic 3</h5>
+            <h5>Kosan Raymond</h5>
             <img src={IMG3} alt="" className="swiper-img" />
+            <p>Occaecat id laboris nostrud in ipsum ipsum labore et anim officia Lorem occaecat.</p>
           </div>
         </SwiperSlide>
       </Swiper>
