@@ -1,0 +1,141 @@
+/* CONTACT */
+
+.contact {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+}
+
+.item-wrap {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+}
+
+.left {
+    display: grid;
+    gap: 1rem;
+}
+
+.left-item {
+    border: 2px solid transparent;
+    width: 12rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+    color: white;
+    background: #1A35C1;
+    transition: all 500ms ease;
+}
+
+.small-wrap {
+    display: grid;
+    gap: 0.5rem;
+}
+
+a {
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: rgb(192, 178, 178);
+    font-weight: bold;
+    transition: all 500ms ease;
+}
+
+a:hover {
+    color: #1A35C1;
+}
+
+.left-item .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    justify-self: center;
+}
+
+.left-item:hover {
+    border-color: #1A35C1;
+    color: #1A35C1;
+    background-color: transparent;
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact_form>.input {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    resize: none;
+    border: 2px solid;
+}
+
+.contact_form .text_area {
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    resize: none;
+    border: 2px solid;
+}
+
+.contact_form .button {
+    padding: 0.8rem;
+    width: 9rem;
+    color: white;
+    background: #1A35C1;
+    border: 2px solid transparent;
+    border-radius: 0.5rem;
+    transition: all 500ms ease;
+}
+
+.button:hover {
+    color: #1A35C1;
+    background: transparent;
+    border-color: #1A35C1;
+}
+
+
+/* End of Contact */
+
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+
+@media screen and (max-width: 1024px) {}
+
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+
+@media screen and (max-width: 600px) {
+    /* CONTACT */
+    .contact {
+        padding: 2rem 0;
+    }
+    .item-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .left {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+    .left-item {
+        margin: auto;
+        width: 70%;
+    }
+    .contact_form {
+        gap: 0.5rem;
+        margin: auto;
+        width: 100%;
+    }
+    .contact_form .input {
+        padding: 0.3rem;
+        width: 100%;
+    }
+    .contact_form .text_area {
+        padding: 0.3rem;
+        width: 100%;
+    }
+    .contact_form .button {
+        padding: 0.5rem;
+        width: 10rem;
+    }
+}
