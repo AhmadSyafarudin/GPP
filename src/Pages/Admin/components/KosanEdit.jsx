@@ -3,11 +3,11 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
-const KosanAdd = () => {
+const KosanEdit = () => {
   const [inputs, setInputs] = useState({});
 
   const handleSubmit = () => {
-    alert("Data Kosan Ditambahkan");
+    alert("Data Kosan Diubah");
   }
 
   const handleChange = (event) => {
@@ -19,7 +19,7 @@ const KosanAdd = () => {
   return (
     <div>
       <div className="form_input">
-        <h2 className="menu_title">Tambah Kosan Baru</h2>
+        <h2 className="menu_title">Ubah Data Kosan</h2>
         <Link to="/admin"><h6 className="admin_link">back to Dashboard</h6></Link>
       </div>
 
@@ -39,10 +39,10 @@ const KosanAdd = () => {
         <label>Fasilitas: </label>
         <input type="text" name="fasilitas" onChange={handleChange}></input>
 
-        <button>Create</button>
+        <button>Save</button>
       </form>
     </div>
   );
 };
 
-export default KosanAdd;
+export default KosanEdit;

@@ -9,6 +9,7 @@ import Sign from "./Pages/Admin/components/auth/Sign";
 import { AuthProvider } from "./context/AuthContext";
 import KosanList from './Pages/Admin/components/KosanList';
 import KosanAdd from './Pages/Admin/components/KosanAdd';
+import KosanEdit from './Pages/Admin/components/KosanEdit';
 
 const App = () => {
   return (
@@ -16,9 +17,9 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/list" element={<KosanList />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/add" element={<KosanAdd />} />
+          <Route path="/admin/edit" element={<KosanEdit />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />
         </Routes>

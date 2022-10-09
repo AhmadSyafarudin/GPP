@@ -2,13 +2,21 @@ import React, {useState } from "react";
 import { Link } from "react-router-dom";
 
 const KosanList = () => {
-  const [kosan, setKosan] = useState([{id:1, 
+  const [kosan, setKosan] = useState([{no:1, 
                                        nama:"kosan melati",
                                        alamat:"Airan Raya",
                                        luas:"3x4",
                                        harga:"RP. 3.000.000",
-                                       fasilitas:["toilet ", "kasur ", "lemari"]}]);
+                                       fasilitas:["toilet, ", "kasur, ", "lemari"]},
+                                       {no:2, 
+                                        nama:"kosan jaya",
+                                        alamat:"jl. Raden Saleh",
+                                        luas:"3x4",
+                                        harga:"RP. 5.000.000",
+                                        fasilitas:["toilet dalam, ", "kasur, ", "lemari, ", "meja belajar, ", "kipas angin"]}]);
 
+
+  
   return (
     <div>
       <div className="list_title">
@@ -32,14 +40,14 @@ const KosanList = () => {
           <tbody>
             {kosan.map((kosan) => (
               <tr>
-                <td>{kosan.id}</td>
+                <td>{kosan.no}</td>
                 <td>{kosan.nama}</td>
                 <td>{kosan.alamat}</td>
                 <td>{kosan.harga}</td>
                 <td>{kosan.luas}</td>
                 <td>{kosan.fasilitas}</td>
                 <td>
-                  <Link to={`${kosan.id}/edit/`}>Edit</Link>
+                  <Link to="/admin/edit"><button className="dlt-btn" >Edit</button></Link>
                   <button className="dlt-btn" >
                     Delete
                   </button>
