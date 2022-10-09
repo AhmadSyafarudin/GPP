@@ -20,27 +20,18 @@ const Beranda = () => {
         <div className="location-wrap">
           <div
             className="location"
-            onClick={() => {
-              navigate("/properti");
-            }}
           >
             <h5>Ryacudu</h5>
           </div>
 
           <div
             className="location"
-            onClick={() => {
-              navigate("/properti");
-            }}
           >
             <h5>Way Hui</h5>
           </div>
 
           <div
             className="location"
-            onClick={() => {
-              navigate("/properti");
-            }}
           >
             <h5>Sukarame</h5>
           </div>

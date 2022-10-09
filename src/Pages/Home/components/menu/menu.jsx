@@ -16,6 +16,7 @@ const Menu = () => {
             <NavLink href="#why">Promo</NavLink>
             <NavLink href="#contact">Kontak</NavLink>
           </Nav>
+            <NavLink href="/login"><button className="btn btn-primary btn-sm w-4">Login</button></NavLink>
         </Navbar.Collapse>
       </Container>
     </Navbar>

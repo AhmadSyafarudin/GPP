@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import "./auth.css";
 
@@ -22,7 +22,7 @@ const Login = () => {
       await login(emailRef.current.value, passwordRef.current.value);
       navigate("/admin");
     } catch {
-      setError("Failed to login");
+      setError("Anda belum Terdaftar atau Email/Password Salah");
     }
     setLoading(false);
   }
@@ -32,7 +32,7 @@ const Login = () => {
       <Card className="form_auth">
         <Card.Body>
           {error && <Alert variant="danger">{error}</Alert>}
-          <h2 className="text-center mb-4">Log in</h2>
+          <h2 className="text-center mb-4">Login Admin</h2>
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label className="mt-2">Email</Form.Label>
@@ -50,6 +50,7 @@ const Login = () => {
           </Form>
         </Card.Body>
       </Card>
+      <div className="w-100 text-center mt-2">Do not have Account? <Link to="/register">Register</Link></div>
     </>
   );
 };

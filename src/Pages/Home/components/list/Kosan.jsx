@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./Kosan.css";
 
 //Animation
@@ -9,8 +10,11 @@ import IMG1 from "../../assets/image 2.png";
 import IMG2 from "../../assets/image 3.png";
 import IMG3 from "../../assets/image 4.png";
 
+
+
 const Kosan = () => {
   return (
+    <Link to="/kosan">
     <section className="produk" id="produk">
       <div className="container-section">
         <Fade direction="down" triggerOnce>
@@ -40,6 +44,7 @@ const Kosan = () => {
         </div>
       </div>
     </section>
+    </Link>
   );
 };
 

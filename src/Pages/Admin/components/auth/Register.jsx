@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../../../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 
 import "./auth.css";
 
-const Sign = () => {
+const Register = () => {
   const navigate = useNavigate();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -18,7 +19,7 @@ const Sign = () => {
     e.preventDefault();
 
     if (passwordRef.current.value !== confirmRef.current.value) {
-      return setError("Password not match");
+      return setError("Password Tidak Sama");
     }
 
     try {
@@ -27,7 +28,7 @@ const Sign = () => {
       await signup(emailRef.current.value, passwordRef.current.value);
       navigate("/login");
     } catch {
-      setError("Failed to create account");
+      setError("Gagal Register, Pastikan Email anda Valid dan Password tidak kurang dari 6 karakter");
     }
     setLoading(false);
   }
@@ -59,9 +60,9 @@ const Sign = () => {
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">Already have an account? Login</div>
+      <div className="w-100 text-center mt-2">Already have an account? <Link to="/login">Login</Link></div>
     </>
   );
 };
 
-export default Sign;
+export default Register;

@@ -2,8 +2,9 @@
 .why {
   background-color: #1A35C1;
   color: white;
-  padding: 5rem 0;
+  padding: 5rem;
 }
+
 .pros {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
