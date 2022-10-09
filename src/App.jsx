@@ -7,6 +7,7 @@ import Admin from "./Pages/Admin/Admin";
 import Login from "./Pages/Admin/components/auth/Login";
 import Sign from "./Pages/Admin/components/auth/Sign";
 import { AuthProvider } from "./context/AuthContext";
+import KosanList from './Pages/Admin/components/KosanList';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/list" element={<KosanList />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign" element={<Sign />} />

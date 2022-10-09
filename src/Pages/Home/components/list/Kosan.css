@@ -1,0 +1,52 @@
+/* Produk */
+.produk {
+  padding: 5rem 0;
+}
+
+.house-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.house-img {
+  width: 100%;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+/* End of Produk */
+
+/* MEDIA QUERIES (MEDIUM DEVICES) */
+@media screen and (max-width: 1024px) {
+  /* PRODUK */
+  .house-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  /* WHY */
+}
+
+/* MEDIA QUERIES (SMALL DEVICES) */
+@media screen and (max-width: 600px) {
+  /* PRODUK */
+  .house-wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .produk {
+    padding: 3rem 0;
+  }
+
+  .house-img {
+    margin-bottom: 0.1rem;
+  }
+
+  .house > h6 {
+    margin-bottom: 0;
+  }
+}
