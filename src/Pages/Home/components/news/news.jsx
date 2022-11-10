@@ -18,7 +18,7 @@ import IMG2 from "../../assets/image 4.png";
 const News = () => {
   return (
     <section className="hero" id="hero">
-      <h3>Recent News</h3>
+      <h3>Topik Terkini!</h3>
       <Swiper
         className="container-section"
         // install Swiper modules
