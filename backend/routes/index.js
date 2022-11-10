@@ -1,12 +1,8 @@
 import express from "express";
  
-import { 
-    getUser,
-    createUser,
-    getUserById,
-    updateUser,
-    deleteUser
-} from "../controllers/User.js";
+import { getUsers, Register, Login, Logout } from "../controllers/User.js";
+import { verifyToken } from "../middleware/VerifyToken.js";
+import { refreshToken } from "../controllers/RefreshToken.js";
  
 import { 
     getKost,
@@ -19,11 +15,11 @@ import {
 const router = express.Router();
 
 //User
-router.get('/user', getUser);
-router.get('/user/:id', getUserById);
-router.post('/user/add', createUser);
-router.patch('/user/update/:id', updateUser);
-router.delete('/user/delete/:id', deleteUser);
+router.get('/user', verifyToken, getUsers);
+router.post('/user/register', Register);
+router.post('/user/login', Login);
+router.get('/user/token', refreshToken);
+router.delete('/user/logout', Logout);
 
 //Kost
 router.get('/kost', getKost);

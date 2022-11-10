@@ -1,50 +1,49 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
-import { useAuth } from "../../../../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
+import axios from 'axios';
 
 import "./auth.css";
 
 const Login = () => {
   const navigate = useNavigate();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const { login } = useAuth();
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
+  const email = useRef();
+  const password = useRef();
+  const [msg, setMsg] = useState('');
 
-  async function handleSubmit(e) {
+  const Auth = async (e) => {
     e.preventDefault();
-
     try {
-      setError("");
-      setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      navigate("/admin");
-    } catch {
-      setError("Anda belum Terdaftar atau Email/Password Salah");
+        await axios.post('http://localhost:5000/kosthunt/user/login', {
+            email: email.current.value,
+            password: password.current.value
+        }, {withCredentials: true, credentials: 'include'});
+        navigate("/admin");
+    } catch (error) {
+        if (error.response) {
+            setMsg(error.response.data.msg);
+        }
     }
-    setLoading(false);
   }
 
   return (
     <>
       <Card className="form_auth">
         <Card.Body>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {msg && <Alert variant="danger">{msg}</Alert>}
           <h2 className="text-center mb-4">Login Admin</h2>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={Auth}>
             <Form.Group id="email">
               <Form.Label className="mt-2">Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Control type="email" ref={email} required />
             </Form.Group>
 
             <Form.Group id="password">
               <Form.Label className="mt-2">Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
+              <Form.Control type="password" ref={password} required />
             </Form.Group>
 
-            <Button disabled={loading} className="w-100 mt-4" type="submit">
+            <Button  className="w-100 mt-4" type="submit">
               Log in
             </Button>
           </Form>

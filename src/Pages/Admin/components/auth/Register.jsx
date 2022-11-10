@@ -1,34 +1,34 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
-import { useAuth } from "../../../../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
-
+import axios from "axios";
 
 import "./auth.css";
 
 const Register = () => {
   const navigate = useNavigate();
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const confirmRef = useRef();
-  const { signup } = useAuth();
-  const [error, setError] = useState("");
+  const username = useRef();
+  const email = useRef();
+  const password = useRef();
+  const confPassword = useRef();
+  const [msg, setMsg] = useState('');
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e) {
+  const signUp = async (e) => {
     e.preventDefault();
-
-    if (passwordRef.current.value !== confirmRef.current.value) {
-      return setError("Password Tidak Sama");
-    }
-
     try {
-      setError("");
-      setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
-      navigate("/login");
-    } catch {
-      setError("Gagal Register, Pastikan Email anda Valid dan Password tidak kurang dari 6 karakter");
+        await axios.post('http://localhost:5000/kosthunt/user/register', {
+            username: username.current.value,
+            email: email.current.value,
+            password: password.current.value,
+            confPassword: confPassword.current.value
+        });
+        setLoading(true);
+        navigate("/login");
+    } catch (error) {
+        if (error.response) {
+            setMsg(error.response.data.msg);
+        }
     }
     setLoading(false);
   }
@@ -37,24 +37,29 @@ const Register = () => {
     <>
       <Card className="form_auth">
         <Card.Body>
-          {error && <Alert variant="danger">{error}</Alert>}
+          {msg && <Alert variant="danger">{msg}</Alert>}
           <h2 className="text-center mb-4">Sign Up</h2>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={signUp}>
+            <Form.Group id="username">
+              <Form.Label className="mt-2">Nama</Form.Label>
+              <Form.Control type="text" ref={username} required  />
+            </Form.Group>
+
             <Form.Group id="email">
               <Form.Label className="mt-2">Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
+              <Form.Control type="email" ref={email} required  />
             </Form.Group>
 
             <Form.Group id="password">
               <Form.Label className="mt-2">Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
+              <Form.Control type="password" ref={password} required  />
             </Form.Group>
 
             <Form.Group id="password-confirm">
               <Form.Label className="mt-2">Password Confirmation</Form.Label>
-              <Form.Control type="password" ref={confirmRef} required />
+              <Form.Control type="password" ref={confPassword} required  />
             </Form.Group>
-            <Button disabled={loading} className="w-100 mt-4" type="submit">
+            <Button  disabled={loading} className="w-100 mt-4" type="submit">
               Sign Up
             </Button>
           </Form>
