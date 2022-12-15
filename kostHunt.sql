@@ -33,37 +33,36 @@ CREATE TABLE IF NOT EXISTS `kost` (
   `updatedAt` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user` (`user_id`),
-  CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE SET NULL ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- Dumping data for table kost_hunt.kost: ~2 rows (approximately)
+-- Dumping data for table kost_hunt.kost: ~1 rows (approximately)
 DELETE FROM `kost`;
 /*!40000 ALTER TABLE `kost` DISABLE KEYS */;
 INSERT INTO `kost` (`id`, `user_id`, `nama`, `alamat`, `panjang`, `lebar`, `fasilitas`, `harga`, `createdAt`, `updatedAt`) VALUES
-	(1, 1, 'WH Kost', 'Way Huwi', 3, 4, 'Kipas Angin, Kasur, Lemari, Meja Belajar', 5000000, '2022-11-10', '2022-11-10'),
-	(2, NULL, 'KW Kost', 'Jati Agung', 3, 4, 'Kipas Angin, Kasur, Lemari, Meja Belajar', 5000000, '2022-11-10', '2022-11-10');
+	(3, NULL, 'KW Kost', 'Jati Agung', 3, 4, 'Kipas Angin, Kasur, Lemari, Meja Belajar', 5000000, '2022-11-10', '2022-11-10');
 /*!40000 ALTER TABLE `kost` ENABLE KEYS */;
 
 -- Dumping structure for table kost_hunt.user
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(30) DEFAULT NULL,
-  `password` varchar(16) DEFAULT NULL,
+  `username` tinytext,
+  `password` text,
   `email` varchar(50) DEFAULT NULL,
   `createdAt` date DEFAULT NULL,
   `updatedAt` date DEFAULT NULL,
+  `refresh_token` text,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table kost_hunt.user: ~2 rows (approximately)
 DELETE FROM `user`;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `createdAt`, `updatedAt`) VALUES
-	(1, 'admin', 'admin', 'admin@admin.com', '2022-11-10', '2022-11-10'),
-	(10, 'syafar', '123456', 'syafar1@gmail.com', '2022-11-10', '2022-11-10');
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `createdAt`, `updatedAt`, `refresh_token`) VALUES
+	(11, 'syafar1', '$2b$10$5Cy.efnSCv6/s/aDcwcO6.cjvpIbuakyQtvYG/IhKkzQjHQyhIily', 'syafar1@gmail.com', '2022-11-10', '2022-11-10', NULL),
+	(13, 'admin', '$2b$10$A9Jaj4hv2.HNmp7.cZYQYu5gvOPWc6JvYtLMPzWUy1LeFQ/utLwBW', 'admin@admin.com', '2022-11-10', '2022-11-10', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEzLCJ1c2VybmFtZSI6ImFkbWluIiwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE2NjgwOTg3OTYsImV4cCI6MTY2ODE4NTE5Nn0.iIoTTkGkntO4IYvhjmFrNq2qE-By0LztCcxMe9Yyq-I');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
