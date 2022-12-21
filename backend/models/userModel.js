@@ -4,6 +4,9 @@ import db from "../config/database.js";
 const { DataTypes } = Sequelize;
  
 const Users = db.define('user',{
+    refresh_token:{
+        type: DataTypes.STRING
+    },
     username:{
         type: DataTypes.STRING
     },
@@ -13,8 +16,8 @@ const Users = db.define('user',{
     email:{
         type: DataTypes.STRING
     },
-    refresh_token:{
-        type: DataTypes.TEXT
+    role:{
+        type: DataTypes.INTEGER
     }
 },{
     freezeTableName: true

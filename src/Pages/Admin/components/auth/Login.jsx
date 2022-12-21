@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
 
 import "./auth.css";
+import { auth } from './../../../../Firebase';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -14,11 +15,18 @@ const Login = () => {
   const Auth = async (e) => {
     e.preventDefault();
     try {
-        await axios.post('http://localhost:5000/kosthunt/user/login', {
+        const response = await axios.get(`http://localhost:5000/kosthunt/user/${email.current.value}`)
+        const auth = await axios.post('http://localhost:5000/kosthunt/user/login', {
             email: email.current.value,
             password: password.current.value
         }, {withCredentials: true, credentials: 'include'});
-        navigate("/admin");
+        // console.log(auth);
+        if (response.data.role === 1 ) {
+          navigate("/admin");
+        }
+        else {
+          navigate("/user");
+        }
     } catch (error) {
         if (error.response) {
             setMsg(error.response.data.msg);

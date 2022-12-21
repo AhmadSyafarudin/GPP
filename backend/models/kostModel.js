@@ -7,6 +7,12 @@ const Kost = db.define('kost',{
     nama:{
         type: DataTypes.STRING
     },
+    user_id:{
+        type: DataTypes.INTEGER
+    },
+    lokasi:{
+        type: DataTypes.STRING
+    },
     alamat:{
         type: DataTypes.STRING
     },

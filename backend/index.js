@@ -15,7 +15,7 @@ try {
     console.error('Connection error:', error);
 }
  
-app.use(cors({ credentials:true, origin:true }));
+app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
 app.use(cookieParser());
 app.use(express.json());
 app.use('/kosthunt', router);

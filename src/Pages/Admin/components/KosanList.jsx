@@ -1,28 +1,17 @@
 import React, {useState } from "react";
-import { Link } from "react-router-dom";
-
-const KosanList = () => {
-  const [kosan, setKosan] = useState([{no:1, 
-                                       nama:"kosan melati",
-                                       alamat:"Airan Raya",
-                                       luas:"3x4",
-                                       harga:"RP. 3.000.000",
-                                       fasilitas:["toilet, ", "kasur, ", "lemari"]},
-                                       {no:2, 
-                                        nama:"kosan jaya",
-                                        alamat:"jl. Raden Saleh",
-                                        luas:"3x4",
-                                        harga:"RP. 5.000.000",
-                                        fasilitas:["toilet dalam, ", "kasur, ", "lemari, ", "meja belajar, ", "kipas angin"]},
-                                        {no:3, 
-                                          nama:"kosan raymond",
-                                          alamat:"jl. Terusan Ryacudu",
-                                          luas:"4x4",
-                                          harga:"RP. 4.500.000",
-                                          fasilitas:["toilet dalam, ", "kasur, ", "lemari, ", "meja"]}]);
+import { useNavigate, Link } from "react-router-dom";
+import axios from 'axios';
 
 
-  
+const KosanList = (props) => {
+  // console.log(props);
+  const navigate = useNavigate();
+
+  const deleteKost = async (id) => {
+    await axios.delete(`http://localhost:5000/kosthunt/kost/delete/${id}`);
+    navigate("/admin");
+  }
+
   return (
     <div>
       <div className="list_title">
@@ -35,6 +24,7 @@ const KosanList = () => {
             <tr>
               <th>No</th>
               <th>Nama Kosan</th>
+              <th>Lokasi Kosan</th>
               <th>Alamat Kosan</th>
               <th>Harga per-Tahun</th>
               <th>Luas</th>
@@ -44,17 +34,18 @@ const KosanList = () => {
           </thead>
 
           <tbody>
-            {kosan.map((kosan) => (
-              <tr>
-                <td>{kosan.no}</td>
+            {props.kost.map((kosan, index) => (
+              <tr key={kosan.id}>
+                <td>{index+1}</td>
                 <td>{kosan.nama}</td>
+                <td>{kosan.lokasi}</td>
                 <td>{kosan.alamat}</td>
                 <td>{kosan.harga}</td>
-                <td>{kosan.luas}</td>
+                <td>{kosan.panjang}x{kosan.lebar}m</td>
                 <td>{kosan.fasilitas}</td>
                 <td>
-                  <Link to="/admin/edit"><button className="dlt-btn" >Edit</button></Link>
-                  <button className="dlt-btn" >
+                  <Link to={`/admin/edit/${kosan.id}`}><button className="dlt-btn" >Edit</button></Link>
+                  <button className="dlt-btn" onClick={() => {if(window.confirm('Yakin Ingin Hapus Data Kosan?')) deleteKost(kosan.id)}}>
                     Delete
                   </button>
                 </td>

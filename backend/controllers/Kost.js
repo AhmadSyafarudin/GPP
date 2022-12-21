@@ -9,6 +9,19 @@ export const getKost = async (req, res) => {
         res.json({ message: error.message });
     }  
 }
+
+export const getKostByUser = async (req, res) => {
+    try {
+        const kost = await Kost.findAll({
+            where: {
+                user_id: req.params.id
+            }
+        });
+        res.json(kost);
+    } catch (error) {
+        res.json({ message: error.message });
+    }  
+}
  
 export const getKostById = async (req, res) => {
     try {

@@ -12,7 +12,20 @@ export const getUsers = async(req, res) => {
         console.log(error);
     }
 }
- 
+
+export const getUserByEmail = async (req, res) => {
+    try {
+        const users = await Users.findAll({
+            where: {
+                email: req.params.email
+            }
+        });
+        res.json(users[0]);
+    } catch (error) {
+        res.json({ message: error.message });
+    }  
+}
+
 export const Register = async(req, res) => {
     const { username, email, password, confPassword } = req.body;
     if(password !== confPassword) return res.status(400).json({msg: "Password dan Confirm Password tidak cocok"});
@@ -57,6 +70,14 @@ export const Login = async(req, res) => {
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000
         });
+        res.cookie('id', userId, {
+            httpOnly: false,
+            maxAge: 24 * 60 * 60 * 1000
+        });
+        res.cookie('nama', username, {
+            httpOnly: false,
+            maxAge: 24 * 60 * 60 * 1000
+        });
         res.json({ accessToken });
     } catch (error) {
         res.status(404).json({msg:"Email tidak ditemukan"});
@@ -78,6 +99,18 @@ export const Logout = async(req, res) => {
             id: userId
         }
     });
+    res.clearCookie(req.headers.cookie.id);
     res.clearCookie('refreshToken');
     return res.sendStatus(200);
+}
+
+export const getUserId = async(req, res) => {
+    const refreshToken = req.cookies.refreshToken;
+    if(!refreshToken) return res.sendStatus(204);
+    const user = await Users.findAll({
+        where:{
+            refresh_token: refreshToken
+        }
+    });
+    res.json(user);
 }

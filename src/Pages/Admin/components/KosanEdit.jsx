@@ -1,13 +1,27 @@
 import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 
 const KosanEdit = () => {
   const [inputs, setInputs] = useState({});
+  const {id} = useParams();
+  const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    alert("Data Kosan Diubah");
+  useEffect(() => {
+    getKostById();
+  }, []);
+
+  const getKostById = async () => {
+      const response = await axios.get(`http://localhost:5000/kosthunt/kost/${id}`);
+      setInputs(response.data);
+  }
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await axios.patch(`http://localhost:5000/kosthunt/kost/update/${id}`, inputs);
+    navigate("/admin");
   }
 
   const handleChange = (event) => {
@@ -25,19 +39,22 @@ const KosanEdit = () => {
 
       <form onSubmit={handleSubmit} className="form_admin">
         <label>Nama: </label>
-        <input type="text" name="nama" onChange={handleChange}></input>
+        <input value={inputs.nama} type="text" name="nama" onChange={handleChange}></input>
 
         <label>Alamat: </label>
-        <input type="text" name="alamat" onChange={handleChange}></input>
+        <input value={inputs.alamat} type="text" name="alamat" onChange={handleChange}></input>
 
         <label>Harga per-Tahun : </label>
-        <input type="text" name="harga" onChange={handleChange}></input>
+        <input value={inputs.harga} type="text" name="harga" onChange={handleChange}></input>
 
-        <label>Luas: </label>
-        <input type="text" name="luas" onChange={handleChange}></input>
+        <label>Panjang: </label>
+        <input value={inputs.panjang} type="text" name="panjang" onChange={handleChange}></input>
+        
+        <label>Lebar: </label>
+        <input value={inputs.lebar} type="text" name="lebar" onChange={handleChange}></input>
         
         <label>Fasilitas: </label>
-        <input type="text" name="fasilitas" onChange={handleChange}></input>
+        <input value={inputs.fasilitas} type="text" name="fasilitas" onChange={handleChange}></input>
 
         <button>Save</button>
       </form>
