@@ -59,7 +59,7 @@ const Admin = () => {
   const Logout = async () => {
     try {
         await axios.delete('http://localhost:5000/kosthunt/user/logout');
-        navigate("/login");
+        navigate("/");
     } catch (error) {
         console.log(error);
     }

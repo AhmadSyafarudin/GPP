@@ -25,6 +25,18 @@ const Kost = db.define('kost',{
     fasilitas:{
         type: DataTypes.STRING
     },
+    foto_depan:{
+        type: DataTypes.STRING
+    },
+    foto_dalam:{
+        type: DataTypes.STRING
+    },
+    url1:{
+        type: DataTypes.STRING
+    },
+    url2:{
+        type: DataTypes.STRING
+    },
     harga:{
         type: DataTypes.FLOAT
     }

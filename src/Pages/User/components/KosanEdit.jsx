@@ -6,6 +6,8 @@ import axios from 'axios';
 
 const KosanEdit = () => {
   const [inputs, setInputs] = useState({});
+  const [preview, setPreview] = useState("");
+  const [preview2, setPreview2] = useState("");
   const {id} = useParams();
   const navigate = useNavigate();
 
@@ -16,13 +18,35 @@ const KosanEdit = () => {
   const getKostById = async () => {
       const response = await axios.get(`http://localhost:5000/kosthunt/kost/${id}`);
       setInputs(response.data);
+      setInputs((values) => ({ ...values, 'foto_depan': "" }));
+      setInputs((values) => ({ ...values, 'foto_dalam': "" }));
   }
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.patch(`http://localhost:5000/kosthunt/kost/update/${id}`, inputs);
+    console.log('====================================');
+    console.log(inputs);
+    console.log('====================================');
+    await axios.patch(`http://localhost:5000/kosthunt/kost/update/${id}`, inputs, {
+      headers: {
+        "Content-type": "multipart/form-data",
+      },
+    });
     navigate("/user");
   }
+
+  const imageChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.files[0];
+    setInputs((values) => ({ ...values, [name]: value }));
+    setPreview(URL.createObjectURL(value));
+  };
+  const imageChange2 = (event) => {
+    const name = event.target.name;
+    const value = event.target.files[0];
+    setInputs((values) => ({ ...values, [name]: value }));
+    setPreview2(URL.createObjectURL(value));
+  };
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -46,7 +70,7 @@ const KosanEdit = () => {
             <option value="Way Huwi">Way Huwi</option>
             <option value="Sukarame">Sukarame</option>
         </select>
-        
+
         <label>Alamat: </label>
         <input value={inputs.alamat} type="text" name="alamat" onChange={handleChange}></input>
 
@@ -61,6 +85,26 @@ const KosanEdit = () => {
         
         <label>Fasilitas: </label>
         <input value={inputs.fasilitas} type="text" name="fasilitas" onChange={handleChange}></input>
+
+        <label>Foto Luar: </label>
+        <input type="file" name="foto_depan" onChange={imageChange}></input>
+        {preview ? (
+            <figure >
+              <img width="200" src={preview} alt="Preview Image" />
+            </figure>
+          ) : (
+            ""
+          )}
+
+        <label>Foto Dalam: </label>
+        <input type="file" name="foto_dalam" onChange={imageChange2}></input>
+        {preview2 ? (
+            <figure >
+              <img width="200" src={preview2} alt="Preview Image" />
+            </figure>
+          ) : (
+            ""
+          )}
 
         <button>Save</button>
       </form>

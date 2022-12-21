@@ -29,6 +29,7 @@ const KosanList = (props) => {
               <th>Harga per-Tahun</th>
               <th>Luas</th>
               <th>Fasilitas</th>
+              <th>Foto</th>
               <th>Aksi</th>
             </tr>
           </thead>
@@ -43,6 +44,14 @@ const KosanList = (props) => {
                 <td>{kosan.harga}</td>
                 <td>{kosan.panjang}x{kosan.lebar}m</td>
                 <td>{kosan.fasilitas}</td>
+                <td>
+                <div>
+                  <p>Foto Luar</p>
+                  <img alt="Foto Luar" width="200" src={kosan.url1}/>
+                  <p>Foto Dalam</p>
+                  <img alt="Foto Dalam" width="200" src={kosan.url2}/>
+                </div>
+                </td>
                 <td>
                   <Link to={`/kost/user/edit/${kosan.id}`}><button className="dlt-btn" >Edit</button></Link>
                   <button className="dlt-btn" onClick={() => {if(window.confirm('Yakin Ingin Hapus Data Kosan?')) deleteKost(kosan.id)}}>
