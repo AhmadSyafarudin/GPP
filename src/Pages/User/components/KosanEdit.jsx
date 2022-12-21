@@ -21,7 +21,7 @@ const KosanEdit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios.patch(`http://localhost:5000/kosthunt/kost/update/${id}`, inputs);
-    navigate("/admin");
+    navigate("/user");
   }
 
   const handleChange = (event) => {
@@ -34,7 +34,7 @@ const KosanEdit = () => {
     <div>
       <div className="form_input">
         <h2 className="menu_title">Ubah Data Kosan</h2>
-        <Link to="/admin"><h6 className="admin_link">back to Dashboard</h6></Link>
+        <Link to="/user"><h6 className="admin_link">back to Dashboard</h6></Link>
       </div>
 
       <form onSubmit={handleSubmit} className="form_admin">
