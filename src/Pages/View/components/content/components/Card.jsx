@@ -20,15 +20,14 @@ const Card = (data) => {
           <Modal.Title id="contained-modal-title-vcenter">{data.nama}</Modal.Title>
         </Modal.Header>
         <Modal.Body className="modal_container">
-          <img className="card-img-modal" src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="home img"></img>
+          <img className="card-img-modal" src={data.url2} alt="home img"></img>
 
           <div className="modal_content">
             <h4>Deskripsi</h4>
             <p>
-              Kos-kosan dengan Ukuran {data.luas} berlokasi di {data.alamat} dengan fasilitas {data.fasilitas}
+              Kos-kosan dengan Ukuran {data.panjang}x{data.lebar}m berlokasi di {data.alamat} dengan fasilitas {data.fasilitas}
             </p>
-
-            <p>Harga sewa per-tahun {data.harga}</p>
+            <p>Harga sewa per-tahun Rp. {data.harga}</p>
           </div>
         </Modal.Body>
         <Modal.Footer>
@@ -42,11 +41,11 @@ const Card = (data) => {
     <>
       <div className="card-container" onClick={() => setModalShow(true)}>
         <div className="card-top">
-          <img className="card-img" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="home img"></img>
+          <img className="card-img" src={data.url1} alt="home img"></img>
           <div className="card-desc">
             <div className="property-title">{data.nama}</div>
             <div className="property-address">{data.alamat}</div>
-            <div className="property-price">{data.harga}</div>
+            <div className="property-price">Rp. {data.harga}</div>
             <div className="facilities">Facilities</div>
             <div className="property-facilities">
               <div className="facilitiy">
@@ -58,7 +57,7 @@ const Card = (data) => {
                 <FaBath className="icon-2" />
               </div>
               <div className="facilitiy">
-                <div>{data.luas}</div>
+                <div>{data.panjang}x{data.lebar}m</div>
               </div>
             </div>
           </div>

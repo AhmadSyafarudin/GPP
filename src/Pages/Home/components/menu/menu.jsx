@@ -13,7 +13,7 @@ const Menu = () => {
           <Nav activeKey="/home" className="justify-content-end">
             <NavLink href="#hero">News</NavLink>
             <NavLink href="#produk">Kosan</NavLink>
-            <NavLink href="#why">Promo</NavLink>
+            <NavLink href="#reason">Promo</NavLink>
             <NavLink href="#contact">Kontak</NavLink>
           </Nav>
             <NavLink href="/login"><button className="btn btn-primary btn-sm w-4">Login</button></NavLink>
