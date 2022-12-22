@@ -37,6 +37,9 @@ const Kost = db.define('kost',{
     url2:{
         type: DataTypes.STRING
     },
+    no_wa:{
+        type: DataTypes.STRING
+    },
     harga:{
         type: DataTypes.FLOAT
     }

@@ -20,6 +20,7 @@
     "react-bootstrap": "^2.3.0",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.0.0",
+    "react-format-currency": "^0.1.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",

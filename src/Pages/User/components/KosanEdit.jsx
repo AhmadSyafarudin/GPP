@@ -74,6 +74,10 @@ const KosanEdit = () => {
         <label>Alamat: </label>
         <input value={inputs.alamat} type="text" name="alamat" onChange={handleChange}></input>
 
+        <label>Kontak Whatsapp: </label>
+        <p>*contoh 62895604395176</p>
+        <input value={inputs.no_wa} type="text" name="no_wa" onChange={handleChange}></input>
+
         <label>Harga per-Tahun : </label>
         <input value={inputs.harga} type="text" name="harga" onChange={handleChange}></input>
 

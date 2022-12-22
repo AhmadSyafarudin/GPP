@@ -1,5 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav, NavLink, NavbarBrand } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+
 
 import "./header.css";
 
@@ -12,8 +14,8 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav activeKey="/home" className="justify-content-end">
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/login">Admin</NavLink>
           </Nav>
+            <NavLink href="/login"><button className="btn btn-primary btn-sm w-4">Login</button></NavLink>
         </Navbar.Collapse>
       </Container>
     </Navbar>

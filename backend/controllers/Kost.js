@@ -46,6 +46,7 @@ export const createKost = async (req, res) => {
     const panjang = req.body.panjang;
     const lebar = req.body.lebar;
     const alamat = req.body.alamat;
+    const no_wa = req.body.no_wa;
     const harga = req.body.harga;
     const fasilitas = req.body.fasilitas;
     const userId = req.body.user_id;
@@ -76,6 +77,7 @@ export const createKost = async (req, res) => {
                 nama: name, 
                 foto_depan: fileName, 
                 foto_dalam: fileName2,
+                no_wa: no_wa,
                 url1: url,
                 url2: url2,
                 user_id: userId,
@@ -153,6 +155,7 @@ export const updateKost = async (req, res) => {
 
     const name = req.body.nama;
     const lokasi = req.body.lokasi;
+    const no_wa = req.body.no_wa;
     const panjang = req.body.panjang;
     const lebar = req.body.lebar;
     const alamat = req.body.alamat;
@@ -166,6 +169,7 @@ export const updateKost = async (req, res) => {
             nama: name, 
             foto_depan: fileName, 
             foto_dalam: fileName2,
+            no_wa: no_wa,
             url1: url,
             url2: url2,
             alamat: alamat,

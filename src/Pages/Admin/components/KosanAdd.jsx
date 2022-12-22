@@ -74,6 +74,10 @@ const KosanAdd = () => {
         <label>Alamat: </label>
         <input type="text" name="alamat" onChange={handleChange}></input>
 
+        <label>Kontak Whatsapp: </label>
+        <p>*contoh 62895604395176</p>
+        <input type="text" name="no_wa" onChange={handleChange}></input>
+
         <label>Harga per-Tahun : </label>
         <input type="text" name="harga" onChange={handleChange}></input>
 

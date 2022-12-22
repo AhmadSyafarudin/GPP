@@ -20,6 +20,7 @@ const Home = () => {
     const response = await axios.get('http://localhost:5000/kosthunt/kost');
     setKost(response.data);
   }
+
   return (
     <>
       <Menu />

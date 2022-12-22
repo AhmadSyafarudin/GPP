@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
 
@@ -26,6 +26,7 @@ const KosanList = (props) => {
               <th>Nama Kosan</th>
               <th>Lokasi Kosan</th>
               <th>Alamat Kosan</th>
+              <th>Whatsapp</th>
               <th>Harga per-Tahun</th>
               <th>Luas</th>
               <th>Fasilitas</th>
@@ -41,6 +42,7 @@ const KosanList = (props) => {
                 <td>{kosan.nama}</td>
                 <td>{kosan.lokasi}</td>
                 <td>{kosan.alamat}</td>
+                <td>{kosan.no_wa}</td>
                 <td>{kosan.harga}</td>
                 <td>{kosan.panjang}x{kosan.lebar}m</td>
                 <td>{kosan.fasilitas}</td>
